@@ -1,5 +1,5 @@
 // class for 2D vector
-function vec2(x, y){
+function vec2(x, y) {
   if (x instanceof vec3 || x instanceof vec2) {
     this.x = x.x;
     this.y = x.y;
@@ -12,7 +12,7 @@ function vec2(x, y){
   } else {
     throwError('No overloaded constructor => (' + typeof x + ', ' + typeof y + ') exists for vec2');
   }
-  
+
   // safely re-initialises the x and y of  vec2
   this.set = (x, y) => {
     if (x instanceof vec3 || x instanceof vec2) {
@@ -29,7 +29,7 @@ function vec2(x, y){
     }
     return this;
   }
-  
+
   // adds a value or vec2 to vector
   this.add = (value) => {
     let v = new vec2(this);
@@ -44,7 +44,7 @@ function vec2(x, y){
     }
     return v;
   }
-  
+
   // subtracts a value or vec2 to vector
   this.subtract = (value) => {
     let v = new vec2(this);
@@ -59,7 +59,7 @@ function vec2(x, y){
     }
     return v;
   }
-  
+
   // multiplies a value or vec2 to vector
   this.multiply = (value) => {
     let v = new vec2(this);
@@ -74,7 +74,7 @@ function vec2(x, y){
     }
     return v;
   }
-  
+
   // divides a value or vec2 to vector
   this.divide = (value) => {
     let v = new vec2(this);
@@ -89,36 +89,36 @@ function vec2(x, y){
     }
     return v;
   }
-  
+
   // returns the square of magnitude
   this.magnitudeSquare = () => {
-    return this.x**2 + this.y**2;
+    return this.x ** 2 + this.y ** 2;
   }
-  
+
   // returns magnitude
   this.magnitude = () => {
-    return this.magnitudeSquare()**0.5;
+    return this.magnitudeSquare() ** 0.5;
   }
-  
+
   // returns normal of vector
   this.normalize = () => {
     return this.divide(this.magnitude());
   }
-  
+
   // returns distance between 2 vectors
   this.distance = (v) => {
     return ((this.x - v.x) ** 2 + (this.y - v.y) ** 2) ** 0.5;
   }
-  
+
   // throws error for vec2 specifically
-  function throwError(message){
+  function throwError(message) {
     throw new Error('vec2 error: ' + message);
   }
-  
+
 }
 
 // class for 3D vector
-function vec3(x, y, z){
+function vec3(x, y, z) {
   if (x instanceof vec2 || x instanceof vec3) {
     this.x = x.x;
     this.y = x.y;
@@ -134,7 +134,7 @@ function vec3(x, y, z){
   } else {
     throwError('No overloaded constructor => (' + typeof x + ', ' + typeof y + ', ' + typeof z + ') exists for vec3');
   }
-  
+
   this.set = (x, y, z) => {
     if (x instanceof vec2) {
       this.x = x.x;
@@ -153,7 +153,7 @@ function vec3(x, y, z){
     }
     return this;
   }
-  
+
   // adds a value or vec3 to vector
   this.add = (value) => {
     let v = new vec3(this);
@@ -170,7 +170,7 @@ function vec3(x, y, z){
     }
     return v;
   }
-  
+
   // subtracts a value or vec3 to vector
   this.subtract = (value) => {
     let v = new vec3(this);
@@ -185,9 +185,9 @@ function vec3(x, y, z){
     } else {
       throwError('Cannot subtract value of type => ' + typeof value);
     }
-   return v;
+    return v;
   }
-  
+
   // multiplies a value or vec3 to vector
   this.multiply = (value) => {
     let v = new vec3(this);
@@ -204,7 +204,7 @@ function vec3(x, y, z){
     }
     return v;
   }
-  
+
   // divides a value or vec3 to vector
   this.divide = (value) => {
     let v = new vec3(this);
@@ -221,30 +221,30 @@ function vec3(x, y, z){
     }
     return v;
   }
-  
+
   // returns the square of magnitude
   this.magnitudeSquare = () => {
-    return this.x**2 + this.y**2 + this.z**2;
+    return this.x ** 2 + this.y ** 2 + this.z ** 2;
   }
-  
+
   // returns magnitude
   this.magnitude = () => {
-    return this.magnitudeSquare()**0.5;
+    return this.magnitudeSquare() ** 0.5;
   }
-  
+
   // returns normal of vector
   this.normalize = () => {
     return this.divide(this.magnitude());
   }
-  
+
   // returns distance between 2 vectors
   this.distance = (v) => {
-    return ((this.x - v.x)**2 + (this.y - v.y)**2 + (this.z - v.z)**2)**0.5;
+    return ((this.x - v.x) ** 2 + (this.y - v.y) ** 2 + (this.z - v.z) ** 2) ** 0.5;
   }
-  
+
   // throws error for vec3 specifically
-  function throwError(message){
+  function throwError(message) {
     throw new Error('vec3 error: ' + message);
   }
-  
+
 }
