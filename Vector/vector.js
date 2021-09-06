@@ -105,6 +105,11 @@ function vec2(x, y){
     return this.divide(this.magnitude());
   }
   
+  // returns distance between 2 vectors
+  this.distance = (v) => {
+    return ((this.x - v.x) ** 2 + (this.y - v.y) ** 2) ** 0.5;
+  }
+  
   // throws error for vec2 specifically
   function throwError(message){
     throw new Error('vec2 error: ' + message);
@@ -230,6 +235,11 @@ function vec3(x, y, z){
   // returns normal of vector
   this.normalize = () => {
     return this.divide(this.magnitude());
+  }
+  
+  // returns distance between 2 vectors
+  this.distance = (v) => {
+    return ((this.x - v.x)**2 + (this.y - v.y)**2 + (this.z - v.z)**2)**0.5;
   }
   
   // throws error for vec3 specifically
