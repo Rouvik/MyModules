@@ -1,8 +1,9 @@
 # Modules
-Contains nultiple helper classes to make web development faster
+Contains nultiple helper classes to make web development faster and easier
 
 # Table of contents
 - Vector
+- Matrix
 
 # Author
 _Rouvik Maji_
